@@ -71,8 +71,6 @@ namespace Bnet.Patcher
                         WriteProcessMemory(hWnd, new IntPtr(JMPAddr), JMP, 1, out BytesWritten);
                         //Console.WriteLine("After write: 0x{0:X2}", ReadByte(hWnd, JMPAddr));
 
-                        CloseHandle(hWnd);
-
                         if (BytesWritten.ToInt32() < 1)
                             throw new Exception("Failed to write to process.");
                         else
