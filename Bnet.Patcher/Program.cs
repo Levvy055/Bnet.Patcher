@@ -22,8 +22,12 @@ namespace Bnet.Patcher
         #endregion
 
         #region Build 0.9.0.8896.BETA
-        static Int32 offset = 0x000B4475;
-        static string version = "bcd3e50524"; //DLL Battle.net Aurora bcd3e50524_public/329 (Mar 14 2012 10:28:16)
+        //static Int32 offset = 0x000B4475;
+        //static string version = "bcd3e50524"; //DLL Battle.net Aurora bcd3e50524_public/329 (Mar 14 2012 10:28:16)
+        #endregion
+
+        #region Build 0.10.0.9183.BETA
+        static Int32 offset = 0x000B5505;
         #endregion
 
         static void Main(string[] args)
@@ -48,13 +52,13 @@ namespace Bnet.Patcher
                         {
                             if (module.ModuleName == "battle.net.dll")
                             {
-                                if (module.FileVersionInfo.FileDescription == version)
-                                {
+                                //if (module.FileVersionInfo.FileDescription == version)
+                                //{
                                     baseAddr = module.BaseAddress;
                                     break;
-                                }
-                                else
-                                    throw new Exception("battle.net.dll version different than expected.");
+                                //}
+                                //else
+                                //    throw new Exception("battle.net.dll version different than expected.");
                             }
                         }
 
