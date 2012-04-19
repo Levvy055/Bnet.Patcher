@@ -31,6 +31,7 @@ namespace Bnet.Patcher
         #endregion
 
         #region Build 0.11.0.9327.BETA
+        //Build 0.11.0.9359.BETA
         static Int32 offset = 0x000B5605;
         //static string version = "8eac7d44dc";
         #endregion
