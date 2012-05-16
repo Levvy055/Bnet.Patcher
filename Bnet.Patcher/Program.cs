@@ -21,6 +21,7 @@ namespace Bnet.Patcher
         static extern bool ReadProcessMemory(IntPtr hProcess, int lpBaseAddress, out byte lpBuffer, int dwSize, IntPtr lpNumberOfBytesRead);
         #endregion
 
+        #region BETA
         #region Build 0.9.0.8896.BETA
         //static Int32 offset = 0x000B4475;
         //static string version = "bcd3e50524"; //DLL Battle.net Aurora bcd3e50524_public/329 (Mar 14 2012 10:28:16)
@@ -32,8 +33,14 @@ namespace Bnet.Patcher
 
         #region Build 0.11.0.9327.BETA
         //Build 0.11.0.9359.BETA
-        static Int32 offset = 0x000B5605;
+        //static Int32 offset = 0x000B5605;
         //static string version = "8eac7d44dc";
+        #endregion
+        #endregion
+
+        #region Build 1.0.1.9558
+        static Int32 offset = 0x000B5952;
+        static string version = "31c8df955a";
         #endregion
 
         static void Main(string[] args)
@@ -58,13 +65,13 @@ namespace Bnet.Patcher
                         {
                             if (module.ModuleName == "battle.net.dll")
                             {
-                                //if (module.FileVersionInfo.FileDescription == version)
-                                //{
+                                if (module.FileVersionInfo.FileDescription == version)
+                                {
                                     baseAddr = module.BaseAddress;
                                     break;
-                                //}
-                                //else
-                                //    throw new Exception("battle.net.dll version different than expected.");
+                                }
+                                else
+                                    throw new Exception("battle.net.dll version different than expected.");
                             }
                         }
 
