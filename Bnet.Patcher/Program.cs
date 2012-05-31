@@ -44,8 +44,13 @@ namespace Bnet.Patcher
         #endregion
 
         #region Build 1.0.2.9749
-        static Int32 offset = 0x000BA802;
-        static string version = "8018401a9c";
+        //static Int32 offset = 0x000BA802;
+        //static string version = "8018401a9c";
+        #endregion
+
+        #region Build 1.0.2.9858
+        static Int32 offset = 0x000BA8A2;
+        static string version = "79fef7ae8e";
         #endregion
 
         static void Main(string[] args)
